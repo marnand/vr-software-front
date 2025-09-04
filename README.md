@@ -1,27 +1,67 @@
-# FrontEnd
+# Sistema de Notificações - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Este é o frontend de um sistema de notificações em tempo real desenvolvido com Angular 18. O projeto permite enviar notificações e acompanhar seu status de processamento através de WebSockets.
 
-## Development server
+## 📋 Sobre o Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O sistema consiste em uma aplicação Angular que:
+- Permite enviar notificações através de uma interface web
+- Conecta-se a um backend via HTTP para envio de mensagens
+- Utiliza WebSockets (Socket.IO) para receber atualizações de status em tempo real
+- Exibe o histórico de notificações enviadas com seus respectivos status
 
-## Code scaffolding
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 18.2** - Framework principal
+- **TypeScript** - Linguagem de programação
+- **Socket.IO Client** - Comunicação em tempo real
+- **RxJS** - Programação reativa
+- **UUID** - Geração de identificadores únicos
+- **Angular CLI** - Ferramentas de desenvolvimento
 
-## Build
+## 📦 Pré-requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Antes de executar o projeto, certifique-se de ter instalado:
 
-## Running unit tests
+- **Node.js** (versão 18 ou superior)
+- **npm** (geralmente vem com o Node.js)
+- **Angular CLI** (opcional, mas recomendado)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+# Instalar Angular CLI globalmente (opcional)
+npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+## 🚀 Como Executar o Projeto Localmente
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1. Clone o repositório
+```bash
+git clone <url-do-repositorio>
+cd front-end
+```
 
-## Further help
+### 2. Instale as dependências
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 3. Configure o Backend
+**IMPORTANTE**: Este frontend depende de um backend rodando na porta 3000. Certifique-se de que o backend esteja executando antes de iniciar o frontend.
+
+O frontend espera que o backend esteja disponível em:
+- **API REST**: `http://localhost:3000/api/notificar`
+- **WebSocket**: `http://localhost:3000`
+
+### 4. Inicie o servidor de desenvolvimento
+```bash
+npm start
+# ou
+ng serve
+```
+
+### 5. Acesse a aplicação
+Abra seu navegador e navegue para `http://localhost:4200/`
+
+A aplicação será recarregada automaticamente sempre que você modificar os arquivos fonte.
+
+## 📁 Estrutura do Projeto
