@@ -65,3 +65,85 @@ Abra seu navegador e navegue para `http://localhost:4200/`
 A aplicação será recarregada automaticamente sempre que você modificar os arquivos fonte.
 
 ## 📁 Estrutura do Projeto
+src/
+├── app/
+│   ├── notificacao/           # Componente principal de notificações
+│   │   ├── notificacao.component.ts
+│   │   ├── notificacao.component.html
+│   │   └── notificacao.component.css
+│   ├── services/              # Serviços da aplicação
+│   │   └── notificacao.service.ts
+│   ├── app.component.*        # Componente raiz
+│   └── app.config.ts          # Configuração da aplicação
+├── index.html                 # Página principal
+├── main.ts                    # Ponto de entrada da aplicação
+└── styles.css                 # Estilos globais
+
+## 🔧 Scripts Disponíveis
+
+- `npm start` - Inicia o servidor de desenvolvimento
+- `npm run build` - Compila o projeto para produção
+- `npm run watch` - Compila o projeto em modo de observação
+- `npm test` - Executa os testes unitários
+
+## 🌐 Funcionalidades
+
+### Envio de Notificações
+- Interface para digitar o conteúdo da mensagem
+- Geração automática de ID único para cada notificação
+- Envio via API REST para o backend
+
+### Acompanhamento em Tempo Real
+- Conexão WebSocket para receber atualizações de status
+- Exibição do histórico de notificações enviadas
+- Atualização automática do status das mensagens
+
+### Estados de Notificação
+- **Enviando**: Notificação sendo processada
+- **Enviado**: Notificação processada com sucesso
+- **Erro**: Falha no processamento
+
+## 🔗 Integração com Backend
+
+O frontend se comunica com o backend através de:
+
+1. **HTTP POST** para `/api/notificar` - Envio de novas notificações
+2. **WebSocket** - Recebimento de atualizações de status via evento `statusAtualizado`
+
+## 🐛 Solução de Problemas
+
+### Erro de Conexão WebSocket
+- Verifique se o backend está rodando na porta 3000
+- Confirme se não há firewall bloqueando a conexão
+- Verifique os logs do console do navegador
+
+### Erro ao Enviar Notificação
+- Confirme se a API do backend está acessível
+- Verifique se o endpoint `/api/notificar` está funcionando
+- Verifique os logs de rede no DevTools do navegador
+
+## 📝 Desenvolvimento
+
+### Gerando Novos Componentes
+```bash
+ng generate component nome-do-componente
+```
+
+### Gerando Novos Serviços
+```bash
+ng generate service nome-do-servico
+```
+
+### Build para Produção
+```bash
+ng build --configuration production
+```
+
+Os arquivos de build serão armazenados no diretório `dist/`.
+
+## 📚 Recursos Adicionais
+
+- [Documentação do Angular](https://angular.dev/)
+- [Angular CLI](https://angular.dev/tools/cli)
+- [Socket.IO Client](https://socket.io/docs/v4/client-api/)
+- [RxJS](https://rxjs.dev/)
